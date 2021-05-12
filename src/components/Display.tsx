@@ -1,35 +1,26 @@
-import React from 'react';
-import { mapTeam } from '../components/Team';
+import React from "react";
+import { mapTeam } from "../components/Team";
 
 interface DisplayProps {
   teams: {
+    name: string;
     players: {
-      score: number
-    }[]
-  }[],
-  teamNames: {
-    name: string,
-    playerNames: {
-      name: string
-    }[],
-  }[],
+      name: string;
+      score: number;
+    }[];
+  }[];
 }
 
-interface DisplayState {
-}
+interface DisplayState {}
 
-class Display extends React.Component<DisplayProps, DisplayState>{
-
+class Display extends React.Component<DisplayProps, DisplayState> {
   render() {
-    const currentRound = this.props.teams;
-    const teamNames = this.props.teamNames;
-    const displayTeams = mapTeam(currentRound, teamNames);
+    const teams = this.props.teams;
+    const displayTeams = mapTeam(teams);
 
     return (
       <div className="display">
-        <ol className="teamList">
-          {displayTeams}
-        </ol>
+        <ol className="teamList">{displayTeams}</ol>
       </div>
     );
   }

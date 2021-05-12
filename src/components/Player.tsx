@@ -1,49 +1,38 @@
-import React from 'react';
+import React from "react";
 
 interface PlayerProps {
-    name: string;
-    score: number;
+  name: string;
+  score: number;
 }
 
 function mapPlayer(
-    players: {
-        score: number
-    }[],
-    playerNames: {
-        name: string
-    }[],
+  players: {
+    score: number;
+    name: string;
+  }[]
 ) {
+  let displayPlayer: {}[] = [];
 
-    let displayPlayer: {}[] = [];
+  for (let pos in players) {
+    displayPlayer.push(
+      <Player name={players[pos].name} score={players[pos].score} />
+    );
+  }
 
-    if (players.length !== playerNames.length) {
-        return displayPlayer;
-    }
-
-    for (let pos in players) {
-        displayPlayer.push(
-            <Player name={playerNames[pos].name} score={players[pos].score} />
-        );
-    }
-
-    return displayPlayer;
+  return displayPlayer;
 }
 
-class Player extends React.Component<PlayerProps>{
-    render() {
-        return (
-            <li>
-                <div className="player">
-                    <h2 className="name">
-                        {this.props.name}
-                    </h2>
-                    <h2 className="score">
-                        {this.props.score}
-                    </h2>
-                </div>
-            </li>
-        );
-    }
+class Player extends React.Component<PlayerProps> {
+  render() {
+    return (
+      <li>
+        <div className="player">
+          <h2 className="name">{this.props.name}</h2>
+          <h2 className="score">{this.props.score}</h2>
+        </div>
+      </li>
+    );
+  }
 }
 
-export { Player, mapPlayer }
+export { Player, mapPlayer };
