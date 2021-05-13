@@ -1,6 +1,7 @@
 import React from "react";
-import { mapPlayer } from "./Player";
+import { mapPlayers } from "./Player";
 
+//the datastructure for the props
 interface TeamProps {
   players: {
     score: number;
@@ -11,7 +12,8 @@ interface TeamProps {
   style: {};
 }
 
-function mapTeam(
+//crates a list of ReactElements from an array of teams
+function mapTeams(
   teams: {
     score: number;
     name: string;
@@ -21,25 +23,37 @@ function mapTeam(
     }[];
   }[]
 ) {
+
+  //create empty array
   let displayTeams: {}[] = [];
 
-  for (let pos in teams) {
+  //add a ReactElement with given data to the empty array for each element in the list
+  for (let team of teams) {
     displayTeams.push(
-      <Team players={teams[pos].players} name={teams[pos].name} score={teams[pos].score} style={{order: teams[pos].score}}/>
+      <Team
+        players={team.players}
+        name={team.name}
+        score={team.score}
+        style={{ order: team.score }}
+      />
     );
   }
 
+  //return the array
   return displayTeams;
 }
 
 class Team extends React.Component<TeamProps> {
+  //rendering the React Element
   render() {
+    //setting up variables
     const players = this.props.players;
-    let displayPlayers = mapPlayer(players);
+    let displayPlayers = mapPlayers(players);
 
+    //return the ReactElement
     return (
       <div className="team" style={this.props.style}>
-        <h3 className="teamName">{this.props.name}</h3>
+        <h3 className="teamName">{this.props.name}:</h3>
         <h3 className="teamScore">{this.props.score}</h3>
         <div className="playerList">{displayPlayers}</div>
       </div>
@@ -47,4 +61,4 @@ class Team extends React.Component<TeamProps> {
   }
 }
 
-export { Team, mapTeam };
+export { Team, mapTeams };

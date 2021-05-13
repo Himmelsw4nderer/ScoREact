@@ -1,36 +1,42 @@
 import React from "react";
 
+//the datastructure for the props
 interface PlayerProps {
   name: string;
   score: number;
 }
 
-function mapPlayer(
+//crates a list of ReactElements from an array of players
+function mapPlayers(
   players: {
     score: number;
     name: string;
   }[]
 ) {
+
+  //create empty array
   let displayPlayer: {}[] = [];
 
-  for (let pos in players) {
-    displayPlayer.push(
-      <Player name={players[pos].name} score={players[pos].score} />
-    );
+  //add a ReactElement with given data to the empty array for each element in the list
+  for (let player of players) {
+    displayPlayer.push(<Player name={player.name} score={player.score} />);
   }
 
+  //return the array
   return displayPlayer;
 }
 
 class Player extends React.Component<PlayerProps> {
+  //rendering the React Element
   render() {
+    //return the ReactElement
     return (
       <div className="player">
-        <h4 className="name">{this.props.name}</h4>
-        <h4 className="score">{this.props.score}</h4>
+        <div className="name">{this.props.name}:</div>
+        <div className="score">{this.props.score}</div>
       </div>
     );
   }
 }
 
-export { Player, mapPlayer };
+export { Player, mapPlayers };

@@ -5,7 +5,7 @@
 
 .teamList{
   padding: 0px;
-  margin:0px;
+  margin: 0px;
   height: fit-content;
   width: fit-content;
   display: flex;
@@ -19,17 +19,29 @@
 }
 
 .team{
-  padding: 0px;
-  margin: 0px;
-  margin-top: 2px;
-  border-bottom: 1px #ffffff solid;
-  border-top: 1px #ffffff solid;
+  padding: 2px;
+  margin: 2px;
+  background-color: #ffffff0c;
+  box-shadow: 0px 0px 2px black;
+  border-radius: 5px;
   margin-right: 5px;
 }
 
+.team:hover{
+  background-color: #ffffff13;
+  box-shadow: 0px 0px 3px black;
+}
+
 .player {
-  padding: 0px;
+  padding: 1px;
   margin: 1px;
+}
+
+.player:hover {
+  padding: 0px;
+  border: 1px solid #9b9b9b ;
+  border-radius: 3px;
+  background-color: #ffffff05;
 }
 
 .teamName {
@@ -50,4 +62,36 @@
 .score{
   display: inline;
   margin-left: 5px;
+}
+
+.moveList{
+
+}
+
+.move{
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  margin: 5px;
+  background-color: #ffffff0c;
+  box-shadow: 0px 0px 2px black;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.move:hover {
+  background-color: #ffffff13;
+  box-shadow: 0px 0px 3px black;
+}
+
+.moveNewScore{
+  padding: 0px;
+  margin: 0px;
+  order: 	2;
+}
+
+.moveText{
+  padding: 0px;
+  margin: 0px;
+  order: 1;
 }

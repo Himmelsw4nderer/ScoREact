@@ -1,22 +1,19 @@
-import React from 'react';
+import React from "react";
 
-interface InputBarProps {
+//the datastructure for the props
+interface InputBarProps {}
 
-}
-
-interface InputBarState {
-
-}
-
-export default class InputBar extends React.Component<InputBarProps, InputBarState> {
-    render(){
-        return(
-            <div className="InputBar">
-                <button>Add Player</button>
-                <button>Remove Player</button>
-                <button>AddPlayer</button>
-                <button>AddPlayer</button>
-            </div>
-        );
-    }
+export default class InputBar extends React.Component<InputBarProps> {
+  //rendering the React Element
+  render() {
+    //return the ReactElement
+    return (
+      <div className="InputBar">
+        <button>Add Player</button>
+        <button>Remove Player</button>
+        <button>AddPlayer</button>
+        <button>AddPlayer</button>
+      </div>
+    );
+  }
 }
