@@ -1,82 +1,53 @@
-.app {
-  background-color: #C1292E;
-  color:#fff;
-  font-family: Arial, Helvetica, sans-serif;
-  align-items: center;
-  text-align: center;
-  margin: 0px;
-  padding: 0px;
-  border: none
-}
-
-.team{
-  align-items: center;
-  border-width: 2px;
-  border-color: #020100;
-  border-style: solid;
-  border-radius: 10px;
-  background-color: #C1292E;
-  color: #FDFFFC;
-  margin: 5px;
-  padding: 10px;
-  display: block;
-  float: left;
-}
-
-.player {
-  align-items: center;
-  max-width: initial;
-  border-width: 1px;
-  border-color: #020100;
-  border-style: solid;
-  border-radius: 5px;
-  margin: 3px 0px 3px 0px;
-  overflow: hidden;
-  vertical-align:middle;
-}
-
-.name{
-  vertical-align:middle;
-  margin: 10px;
-  max-width: auto;
-  float: left;
-}
-
-.score{
-  vertical-align:middle;
-  margin: 10px;
-  max-width: auto;
-  float: left;
+.display {
+  padding: 3px;
+  align-content: center;
 }
 
 .teamList{
-  align-items: center;
-  list-style: none;
-}
-
-.teamName {
-  align-items: center;
-  list-style: none;
-  float: left;
-  margin-right: 10px;
+  padding: 0px;
+  margin:0px;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: stretch;
+  flex-flow: row wrap;
 }
 
 .playerList {
-  align-items: center;
-  list-style: none;
-  padding: 0px;
-  margin: 0px;
-  float: left;
+  padding-left: 10px;
+  border-top: #9b9b9b solid 1px;
 }
 
-.display {
-  align-items: center;
-  border-bottom: #FDFFFC 50px solid;
-  border-right: #FDFFFC 25px solid;
-  border-top: #FDFFFC 50px solid;
-  border-left: #FDFFFC 25px solid;
-  border-radius: 5px;
-  border-collapse: collapse;
-  float: left;
-  padding: 10px 30px 30px 10px;
+.team{
+  padding: 0px;
+  margin: 0px;
+  margin-top: 2px;
+  border-bottom: 1px #ffffff solid;
+  border-top: 1px #ffffff solid;
+  margin-right: 5px;
+}
+
+.player {
+  padding: 0px;
+  margin: 1px;
+}
+
+.teamName {
+  display: inline;
+  margin-right: 7px;
+}
+
+.teamScore {
+  display: inline;
+  margin-left: 7px;
+}
+
+.name{
+  display: inline;
+  margin-right: 5px;
+}
+
+.score{
+  display: inline;
+  margin-left: 5px;
 }

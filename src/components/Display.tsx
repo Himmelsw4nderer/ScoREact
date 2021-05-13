@@ -3,10 +3,11 @@ import { mapTeam } from "../components/Team";
 
 interface DisplayProps {
   teams: {
+    score: number;
     name: string;
     players: {
-      name: string;
       score: number;
+      name: string;
     }[];
   }[];
 }
@@ -20,7 +21,7 @@ class Display extends React.Component<DisplayProps, DisplayState> {
 
     return (
       <div className="display">
-        <ol className="teamList">{displayTeams}</ol>
+        <div className="teamList">{displayTeams}</div>
       </div>
     );
   }

@@ -1,15 +1,17 @@
 import "./App.css";
 import React from "react";
 import Display from "./components/Display";
+import InputBar from "./components/InputBar";
 
 interface AppProps {}
 
 interface AppState {
   teams: {
+    score: number;
     name: string;
     players: {
-      name: string;
       score: number;
+      name: string;
     }[];
   }[];
 }
@@ -19,6 +21,7 @@ class App extends React.Component<AppProps, AppState> {
     super(props);
     this.state = {
       teams: new Array(7).fill({
+        score: 0,
         name: "teamname",
         players: new Array(2).fill({
           name: "playername",
@@ -34,6 +37,7 @@ class App extends React.Component<AppProps, AppState> {
     return (
       <div className="app">
         <Display teams={teams} />
+        <InputBar/>
       </div>
     );
   }

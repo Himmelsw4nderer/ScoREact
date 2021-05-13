@@ -1,12 +1,10 @@
 html {
     border-style: none;
     padding: 0;
-    padding-top: 0;
-    margin-top: 0;
     margin: 0;
-    display: block;
-    align-self: start;
-    background-color: #235789;
+    background-color: #cfcfcf;
+    width: fit-content;
+    height: fit-content;
 }
 
 body {
@@ -17,8 +15,8 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    display: block;
-    align-self: start;
+    width: fit-content;
+    height: fit-content;
 }
 
 #header {

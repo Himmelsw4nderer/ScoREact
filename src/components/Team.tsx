@@ -7,10 +7,13 @@ interface TeamProps {
     name: string;
   }[];
   name: string;
+  score: number;
+  style: {};
 }
 
 function mapTeam(
   teams: {
+    score: number;
     name: string;
     players: {
       score: number;
@@ -22,7 +25,7 @@ function mapTeam(
 
   for (let pos in teams) {
     displayTeams.push(
-      <Team players={teams[pos].players} name={teams[pos].name} />
+      <Team players={teams[pos].players} name={teams[pos].name} score={teams[pos].score} style={{order: teams[pos].score}}/>
     );
   }
 
@@ -35,10 +38,11 @@ class Team extends React.Component<TeamProps> {
     let displayPlayers = mapPlayer(players);
 
     return (
-      <li className="team">
-        <h1 className="teamName">{this.props.name}</h1>
-        <ol className="playerList">{displayPlayers}</ol>
-      </li>
+      <div className="team" style={this.props.style}>
+        <h3 className="teamName">{this.props.name}</h3>
+        <h3 className="teamScore">{this.props.score}</h3>
+        <div className="playerList">{displayPlayers}</div>
+      </div>
     );
   }
 }

@@ -25,12 +25,10 @@ function mapPlayer(
 class Player extends React.Component<PlayerProps> {
   render() {
     return (
-      <li>
-        <div className="player">
-          <h2 className="name">{this.props.name}</h2>
-          <h2 className="score">{this.props.score}</h2>
-        </div>
-      </li>
+      <div className="player">
+        <h4 className="name">{this.props.name}</h4>
+        <h4 className="score">{this.props.score}</h4>
+      </div>
     );
   }
 }
